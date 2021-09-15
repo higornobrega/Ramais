@@ -1,0 +1,15 @@
+{
+    "python.formatting.provider": "black",
+    "python.testing.pytestArgs": [
+        "setor"
+    ],
+    "python.testing.unittestEnabled": true,
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./setor",
+        "-p",
+        "*_test.py"
+    ]
+}
