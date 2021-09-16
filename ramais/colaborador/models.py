@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 from polo.models import Polo
 
 class Colaborador(models.Model):
@@ -20,7 +21,7 @@ class Colaborador(models.Model):
         (3,'Naturalidade vinculo 3'),
     )
     
-    matricula = models.CharField("Matricula", max_length=50)
+    matricula = models.CharField("Matricula", max_length=50, primary_key=True)
     tipo = models.IntegerField("Tipo", choices=tipo_colaborador)
     nomeColaborador = models.CharField("Nome", max_length=254)
     emailInstitucional = models.EmailField("Email Intitucional", max_length=254)
@@ -28,11 +29,10 @@ class Colaborador(models.Model):
     numeroWhatsapp = models.CharField("Nome", max_length=21, blank=True, null=True)
     sexo = models.IntegerField("Sexo", choices=sexo_colaborador)
     instagram = models.CharField("Instagram", max_length=254)
-    #setor = models.ManyToManyField(Setor)
     linkedin = models.CharField("Linkedin", max_length=254)
     imagem = models.ImageField("Imagem", upload_to='foto/%d/%m/%y/', blank=True, null=True)
     natVinc = models.IntegerField("Sexo", choices=natVinc_colaborador)
     cargaHoraria = models.IntegerField("CH")
-    polo = models.ManyToManyField(Polo)
+    polo = models.ManyToManyField(Polo, verbose_name="Polo")
     #senha = models.CharField("Senha", max_length=254)
     

@@ -1,7 +1,5 @@
 from django.test import TestCase
 from horario_funcionamento.models import HorarioFuncionamento
-
-
 class HorarioFuncionamentoModelTestCase(TestCase):
     def setUp(self) -> None:
         self.horario_funcionamento = HorarioFuncionamento.objects.create(turno=1, inicioFuncionamento = '07:00', finalFuncionamento = '08:00')
